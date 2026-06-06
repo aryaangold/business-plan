@@ -1,0 +1,2696 @@
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Proposal — Brand & Communications · Arian Jecoliah Alamba</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        :root {
+            --sf-font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            --white: #FFFFFF;
+            --off-white: #FBFBFD;
+            --gray-50: #F5F5F7;
+            --gray-100: #E8E8ED;
+            --gray-200: #D2D2D7;
+            --gray-300: #AEAEB2;
+            --gray-400: #86868B;
+            --gray-500: #6E6E73;
+            --gray-600: #48484A;
+            --gray-700: #3A3A3C;
+            --gray-800: #2C2C2E;
+            --gray-900: #1D1D1F;
+            --black: #000000;
+            --green-subtle: #34C759;
+            --green-bg: rgba(52,199,89,0.08);
+            --green-border: rgba(52,199,89,0.18);
+            --green-text: #248A3D;
+            --glass-white: rgba(255,255,255,0.72);
+            --glass-white-heavy: rgba(255,255,255,0.88);
+            --glass-border-subtle: rgba(0,0,0,0.06);
+            --glass-shadow-sm: 0 2px 12px rgba(0,0,0,0.04);
+            --glass-shadow-md: 0 8px 32px rgba(0,0,0,0.06);
+            --glass-shadow-hover: 0 20px 60px rgba(0,0,0,0.10);
+            --radius-sm: 12px;
+            --radius-md: 16px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --radius-2xl: 36px;
+            --radius-pill: 980px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--sf-font);
+            background: var(--off-white);
+            color: var(--gray-900);
+            line-height: 1.47059;
+            letter-spacing: -0.022em;
+            overflow-x: hidden;
+            font-size: 17px;
+        }
+
+        ::selection { background: rgba(0,0,0,0.08); }
+
+        .bg-decoration {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            background: var(--off-white);
+            overflow: hidden;
+        }
+
+        .bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.35;
+        }
+
+        .bg-orb-1 {
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(200,200,215,0.4), transparent 70%);
+            top: -15%; right: -10%;
+            animation: float1 28s ease-in-out infinite;
+        }
+
+        .bg-orb-2 {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(180,185,200,0.3), transparent 70%);
+            bottom: -10%; left: -8%;
+            animation: float2 34s ease-in-out infinite;
+        }
+
+        .bg-orb-3 {
+            width: 450px; height: 450px;
+            background: radial-gradient(circle, rgba(210,210,220,0.2), transparent 70%);
+            top: 50%; left: 42%;
+            animation: float3 22s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+            0%,100% { transform: translate(0,0); }
+            33% { transform: translate(-35px, 28px); }
+            66% { transform: translate(18px, -18px); }
+        }
+        @keyframes float2 {
+            0%,100% { transform: translate(0,0); }
+            40% { transform: translate(28px, -22px); }
+            70% { transform: translate(-16px, 14px); }
+        }
+        @keyframes float3 {
+            0%,100% { transform: translate(0,0); }
+            50% { transform: translate(-25px, 18px); }
+        }
+
+        .scroll-progress {
+            position: fixed;
+            top: 0; left: 0;
+            width: 0%; height: 2px;
+            background: var(--gray-900);
+            z-index: 1001;
+            transition: width 0.1s linear;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 0 2rem;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(251,251,253,0.82);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .nav-logo-mark {
+            width: 26px; height: 26px;
+            background: var(--gray-900);
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .nav-logo-mark-inner {
+            width: 8px; height: 8px;
+            background: var(--white);
+            border-radius: 50%;
+        }
+
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .nav-logo-name {
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .nav-logo-title {
+            font-size: 0.62rem;
+            font-weight: 500;
+            color: var(--gray-400);
+            letter-spacing: 0.01em;
+            line-height: 1.2;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.75rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover { color: var(--gray-900); }
+
+        .nav-cta {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--gray-900);
+            background: var(--glass-white);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border-subtle);
+            padding: 0.42rem 1.1rem;
+            border-radius: var(--radius-pill);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--glass-shadow-sm);
+        }
+
+        .nav-cta:hover {
+            background: var(--glass-white-heavy);
+            box-shadow: var(--glass-shadow-md);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            color: var(--gray-900);
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0; right: -100%;
+            width: 100%; height: 100vh;
+            background: rgba(251,251,253,0.97);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            z-index: 999;
+            padding: 5rem 2rem;
+            transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active { right: 0; }
+
+        .mobile-nav-links { list-style: none; }
+        .mobile-nav-links li { margin-bottom: 0.2rem; }
+
+        .mobile-nav-links a {
+            color: var(--gray-900);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            display: block;
+            padding: 0.6rem 0;
+            letter-spacing: -0.025em;
+            transition: color 0.2s ease;
+        }
+
+        .mobile-nav-links a:hover { color: var(--gray-500); }
+
+        .mobile-contact-block {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-100);
+        }
+
+        .mobile-contact-block p {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            margin-bottom: 0.75rem;
+        }
+
+        .mobile-contact-block a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray-600);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: color 0.2s ease;
+        }
+
+        .mobile-contact-block a:hover { color: var(--gray-900); }
+        .mobile-contact-block a i { font-size: 0.8rem; color: var(--gray-400); width: 16px; }
+
+        section { padding: 6rem 2rem; }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.67rem;
+            font-weight: 600;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            margin-bottom: 0.9rem;
+        }
+
+        .section-label i { font-size: 0.58rem; }
+
+        .section-title {
+            font-size: clamp(1.9rem, 4vw, 2.9rem);
+            font-weight: 700;
+            color: var(--gray-900);
+            letter-spacing: -0.04em;
+            line-height: 1.07;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--gray-500);
+            line-height: 1.65;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        .section-header-centered {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header-centered .section-subtitle {
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .section-divider {
+            max-width: 1100px;
+            margin: 0 auto;
+            height: 1px;
+            background: var(--gray-100);
+        }
+
+        .btn-dark {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.82rem 1.65rem;
+            background: var(--gray-900);
+            border: none;
+            border-radius: var(--radius-pill);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--white);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+            letter-spacing: -0.01em;
+            font-family: inherit;
+        }
+
+        .btn-dark:hover {
+            background: var(--black);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.20);
+            transform: translateY(-2px);
+        }
+
+        .btn-dark i { font-size: 0.78rem; }
+
+        .btn-glass {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.82rem 1.65rem;
+            background: var(--glass-white-heavy);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border-subtle);
+            border-radius: var(--radius-pill);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gray-900);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+            box-shadow: var(--glass-shadow-sm);
+            letter-spacing: -0.01em;
+            font-family: inherit;
+        }
+
+        .btn-glass:hover {
+            background: var(--white);
+            box-shadow: var(--glass-shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .btn-glass i { font-size: 0.78rem; }
+
+        .glass-card {
+            background: var(--glass-white-heavy);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border-subtle);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--glass-shadow-sm);
+            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.85), transparent);
+            pointer-events: none;
+        }
+
+        .glass-card:hover {
+            box-shadow: var(--glass-shadow-hover);
+            transform: translateY(-3px);
+            border-color: rgba(0,0,0,0.07);
+        }
+
+        .glass-card-flat {
+            background: var(--glass-white-heavy);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border-subtle);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--glass-shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card-flat::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.85), transparent);
+            pointer-events: none;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: all 0.75s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in { animation: fadeInUp 0.75s cubic-bezier(0.4,0,0.2,1) both; }
+        .animate-delay-1 { animation-delay: 0.12s; }
+        .animate-delay-2 { animation-delay: 0.24s; }
+        .animate-delay-3 { animation-delay: 0.36s; }
+        .animate-delay-4 { animation-delay: 0.48s; }
+        .animate-delay-5 { animation-delay: 0.60s; }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+        }
+
+        .hero-content { max-width: 820px; }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: var(--glass-white);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border-subtle);
+            border-radius: var(--radius-pill);
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--gray-500);
+            margin-bottom: 2.25rem;
+            box-shadow: var(--glass-shadow-sm);
+            letter-spacing: 0.01em;
+        }
+
+        .hero-eyebrow .dot {
+            width: 5px; height: 5px;
+            background: var(--gray-900);
+            border-radius: 50%;
+        }
+
+        /* Live Status Badge */
+        .hero-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: var(--green-bg);
+            border: 1px solid var(--green-border);
+            border-radius: var(--radius-pill);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--green-text);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-status-badge .pulse-dot {
+            width: 8px; height: 8px;
+            background: var(--green-subtle);
+            border-radius: 50%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .hero-status-badge .pulse-dot::before {
+            content: '';
+            position: absolute;
+            top: -3px; left: -3px;
+            width: 14px; height: 14px;
+            background: rgba(52,199,89,0.3);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.4); opacity: 0; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.8rem);
+            font-weight: 700;
+            line-height: 1.04;
+            letter-spacing: -0.046em;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .light {
+            color: var(--gray-400);
+            font-weight: 300;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 1.8vw, 1.18rem);
+            color: var(--gray-500);
+            max-width: 560px;
+            margin: 0 auto 2.75rem;
+            line-height: 1.65;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 0.85rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 5rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--gray-100);
+        }
+
+        .meta-item { text-align: center; }
+
+        .meta-label {
+            font-size: 0.67rem;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .meta-value {
+            font-size: 0.93rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            letter-spacing: -0.02em;
+        }
+
+        .author-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 18px 10px 10px;
+            background: var(--glass-white);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border-subtle);
+            border-radius: var(--radius-pill);
+            box-shadow: var(--glass-shadow-sm);
+            margin-bottom: 2rem;
+            text-decoration: none;
+        }
+
+        .author-avatar {
+            width: 32px; height: 32px;
+            background: var(--gray-900);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .author-avatar-initials {
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.02em;
+        }
+
+        .author-info { text-align: left; }
+
+        .author-name {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .author-role {
+            font-size: 0.65rem;
+            color: var(--gray-400);
+            font-weight: 500;
+            line-height: 1.2;
+            margin-top: 1px;
+        }
+
+        /* ========== INTRODUCTION ========== */
+        .intro-block {
+            padding: 4rem;
+            text-align: center;
+        }
+
+        .intro-body {
+            font-size: 1.02rem;
+            color: var(--gray-600);
+            line-height: 1.82;
+            max-width: 620px;
+            margin: 0 auto;
+            letter-spacing: -0.01em;
+        }
+
+        .intro-body p + p { margin-top: 1.2rem; }
+
+        /* ========== QUESTIONNAIRE ========== */
+        .questionnaire-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: var(--gray-50);
+            border: 1px solid var(--glass-border-subtle);
+            border-radius: var(--radius-pill);
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            margin-top: 1.1rem;
+            font-style: italic;
+        }
+
+        .questionnaire-note i { font-size: 0.72rem; color: var(--gray-400); }
+
+        .q-groups { display: grid; grid-template-columns: 1fr; gap: 1.1rem; }
+
+        .q-group { padding: 2.5rem; }
+
+        .q-group-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .q-group-num {
+            width: 36px; height: 36px;
+            background: var(--gray-900);
+            color: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .q-group-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+        }
+
+        .q-list { list-style: none; display: grid; gap: 0; }
+
+        .q-item {
+            display: grid;
+            grid-template-columns: 26px 1fr;
+            gap: 0.75rem;
+            align-items: baseline;
+            padding: 0.95rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.25s ease;
+        }
+
+        .q-item:last-child { border-bottom: none; }
+        .q-item:hover { padding-left: 0.2rem; }
+
+        .q-num {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--gray-300);
+            padding-top: 2px;
+        }
+
+        .q-item:hover .q-num { color: var(--gray-900); }
+
+        .q-text {
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+        }
+
+        .q-item:hover .q-text { color: var(--gray-900); }
+
+        .q-submit-block {
+            text-align: center;
+            padding: 2.25rem 2.5rem;
+            border-top: 1px solid rgba(0,0,0,0.04);
+            margin-top: 0.25rem;
+        }
+
+        .q-submit-block p {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 1.25rem;
+            line-height: 1.65;
+        }
+
+        /* ============================================================
+           ROADMAP
+        ============================================================ */
+        .roadmap-wrapper {
+            position: relative;
+            margin-top: 3.5rem;
+        }
+
+        /* Vertical timeline line */
+        .roadmap-line {
+            position: absolute;
+            left: 28px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gray-200);
+            z-index: 0;
+        }
+
+        .roadmap-line-progress {
+            position: absolute;
+            left: 28px;
+            top: 0;
+            width: 2px;
+            height: 0;
+            background: var(--gray-900);
+            z-index: 1;
+            transition: height 0.8s ease;
+        }
+
+        .roadmap-phase {
+            position: relative;
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 1.5rem;
+            margin-bottom: 0;
+            padding-bottom: 2.5rem;
+            z-index: 2;
+        }
+
+        .roadmap-phase:last-child { padding-bottom: 0; }
+
+        /* Timeline node */
+        .roadmap-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            position: relative;
+        }
+
+        .roadmap-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--gray-300);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 3;
+            transition: all 0.3s ease;
+        }
+
+        /* Ongoing state */
+        .roadmap-phase.ongoing .roadmap-dot {
+            width: 22px;
+            height: 22px;
+            border: 3px solid var(--green-subtle);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(52,199,89,0.15);
+        }
+
+        .roadmap-phase.ongoing .roadmap-dot::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 8px; height: 8px;
+            background: var(--green-subtle);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.6); }
+        }
+
+        /* Completed state */
+        .roadmap-phase.completed .roadmap-dot {
+            background: var(--gray-900);
+            border-color: var(--gray-900);
+        }
+
+        .roadmap-phase.completed .roadmap-dot::after {
+            content: '✓';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.55rem;
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        /* Upcoming state */
+        .roadmap-phase.upcoming .roadmap-dot {
+            border-color: var(--gray-200);
+            background: var(--gray-50);
+        }
+
+        /* Phase card */
+        .roadmap-card {
+            background: var(--glass-white-heavy);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border-subtle);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--glass-shadow-sm);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+            position: relative;
+        }
+
+        .roadmap-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.85), transparent);
+            pointer-events: none;
+        }
+
+        .roadmap-card:hover {
+            box-shadow: var(--glass-shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Ongoing card highlight */
+        .roadmap-phase.ongoing .roadmap-card {
+            border-color: var(--green-border);
+            box-shadow: 0 4px 24px rgba(52,199,89,0.08), var(--glass-shadow-sm);
+        }
+
+        .roadmap-phase.upcoming .roadmap-card {
+            opacity: 0.65;
+        }
+
+        .roadmap-phase.upcoming:hover .roadmap-card {
+            opacity: 0.85;
+        }
+
+        .roadmap-card-header {
+            padding: 1.75rem 2rem 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .roadmap-card-header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .roadmap-phase-num {
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .roadmap-phase-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+        }
+
+        .roadmap-phase-subtitle {
+            font-size: 0.78rem;
+            color: var(--gray-500);
+            line-height: 1.5;
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        /* Status badges */
+        .roadmap-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 14px;
+            border-radius: var(--radius-pill);
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            flex-shrink: 0;
+        }
+
+        .roadmap-status.ongoing {
+            background: var(--green-bg);
+            color: var(--green-text);
+            border: 1px solid var(--green-border);
+        }
+
+        .roadmap-status.ongoing .status-dot {
+            width: 6px; height: 6px;
+            background: var(--green-subtle);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        .roadmap-status.upcoming {
+            background: var(--gray-50);
+            color: var(--gray-400);
+            border: 1px solid var(--glass-border-subtle);
+        }
+
+        .roadmap-status.completed {
+            background: var(--gray-900);
+            color: var(--white);
+            border: 1px solid var(--gray-900);
+        }
+
+        .roadmap-card-body {
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        .roadmap-deliverables {
+            list-style: none;
+            display: grid;
+            gap: 0.55rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .roadmap-deliverables li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            line-height: 1.55;
+        }
+
+        .roadmap-deliverables li i {
+            font-size: 0.5rem;
+            color: var(--gray-400);
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+
+        .roadmap-outcome {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 1rem 1.25rem;
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            font-size: 0.845rem;
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+
+        .roadmap-outcome i {
+            color: var(--gray-400);
+            font-size: 0.75rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .roadmap-outcome strong {
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+
+        /* Ongoing highlight outcome */
+        .roadmap-phase.ongoing .roadmap-outcome {
+            background: var(--green-bg);
+            border: 1px solid var(--green-border);
+        }
+
+        .roadmap-phase.ongoing .roadmap-outcome i {
+            color: var(--green-text);
+        }
+
+        /* ========== COMPETITOR ANALYSIS SECTION ========== */
+        .competitor-section {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--glass-border-subtle);
+        }
+
+        .competitor-section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .competitor-section-header i {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        .competitor-section-header h4 {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .competitor-section-desc {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            line-height: 1.65;
+            margin-bottom: 1.5rem;
+        }
+
+        .competitor-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .competitor-group:last-child { margin-bottom: 0; }
+
+        .competitor-group-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: var(--radius-pill);
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            margin-bottom: 0.75rem;
+        }
+
+        .competitor-group-label.local {
+            background: rgba(0,122,255,0.08);
+            color: #0055CC;
+            border: 1px solid rgba(0,122,255,0.15);
+        }
+
+        .competitor-group-label.local i {
+            font-size: 0.55rem;
+        }
+
+        .competitor-group-label.international {
+            background: rgba(88,86,214,0.08);
+            color: #4B3FA0;
+            border: 1px solid rgba(88,86,214,0.15);
+        }
+
+        .competitor-group-label.international i {
+            font-size: 0.55rem;
+        }
+
+        .competitor-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.6rem;
+        }
+
+        .competitor-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.75rem 1rem;
+            background: var(--white);
+            border: 1px solid var(--glass-border-subtle);
+            border-radius: var(--radius-md);
+            transition: all 0.25s ease;
+        }
+
+        .competitor-item:hover {
+            box-shadow: var(--glass-shadow-sm);
+            border-color: rgba(0,0,0,0.08);
+        }
+
+        .competitor-item-icon {
+            width: 32px; height: 32px;
+            background: var(--gray-50);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .competitor-item-icon i {
+            font-size: 0.7rem;
+            color: var(--gray-500);
+        }
+
+        .competitor-item-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .competitor-item-name {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            letter-spacing: -0.01em;
+        }
+
+        .competitor-item-focus {
+            font-size: 0.68rem;
+            color: var(--gray-400);
+            font-weight: 500;
+        }
+
+        /* ========== FAQs ========== */
+        .faq-section {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--glass-border-subtle);
+        }
+
+        .faq-section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.25rem;
+        }
+
+        .faq-section-header i {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        .faq-section-header h4 {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .faq-item:last-child { border-bottom: none; }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 0;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s ease;
+        }
+
+        .faq-question:hover .faq-q-text { color: var(--gray-900); }
+
+        .faq-q-text {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            letter-spacing: -0.01em;
+            line-height: 1.45;
+            transition: color 0.2s ease;
+        }
+
+        .faq-toggle {
+            width: 24px; height: 24px;
+            background: var(--white);
+            border: 1px solid var(--glass-border-subtle);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .faq-toggle i {
+            font-size: 0.55rem;
+            color: var(--gray-400);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-toggle {
+            background: var(--gray-900);
+            border-color: var(--gray-900);
+        }
+
+        .faq-item.open .faq-toggle i {
+            color: var(--white);
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), padding 0.35s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 0 1.25rem 0;
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            line-height: 1.72;
+        }
+
+        /* ========== SCOPE ========== */
+        .scope-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.1rem;
+            margin-top: 3rem;
+        }
+
+        .scope-card { padding: 2.25rem; }
+
+        .scope-card-icon {
+            width: 42px; height: 42px;
+            background: var(--gray-50);
+            border: 1px solid var(--glass-border-subtle);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            margin-bottom: 1.25rem;
+        }
+
+        .scope-card h3 {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-transform: uppercase;
+            letter-spacing: 0.055em;
+            margin-bottom: 1.1rem;
+        }
+
+        .scope-list { list-style: none; display: grid; gap: 0.6rem; }
+
+        .scope-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        .scope-list li i {
+            font-size: 0.5rem;
+            color: var(--gray-400);
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+
+        .scope-optional-badge {
+            display: block;
+            width: fit-content;
+            padding: 4px 11px;
+            background: var(--gray-50);
+            border: 1px solid var(--glass-border-subtle);
+            border-radius: var(--radius-pill);
+            font-size: 0.63rem;
+            font-weight: 600;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1rem;
+        }
+
+        .scope-exclusions {
+            margin-top: 2.25rem;
+            padding: 2rem;
+            background: var(--gray-50);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--glass-border-subtle);
+        }
+
+        .scope-exclusions h4 {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+        }
+
+        .exclusion-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+        }
+
+        .exclusion-list li {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: var(--white);
+            border: 1px solid var(--glass-border-subtle);
+            border-radius: var(--radius-pill);
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+
+        .exclusion-list li i { font-size: 0.48rem; color: var(--gray-300); }
+
+        /* ========== CLOSING ========== */
+        .closing-section {
+            background: var(--gray-900);
+            padding: 10rem 2rem;
+            text-align: center;
+        }
+
+        .closing-inner { max-width: 680px; margin: 0 auto; }
+
+        .closing-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-pill);
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 2.5rem;
+        }
+
+        .closing-eyebrow-dot {
+            width: 5px; height: 5px;
+            background: rgba(255,255,255,0.35);
+            border-radius: 50%;
+        }
+
+        .closing-title {
+            font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.044em;
+            line-height: 1.06;
+            margin-bottom: 1.5rem;
+        }
+
+        .closing-body {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.75;
+            margin-bottom: 3rem;
+            letter-spacing: -0.01em;
+        }
+
+        .closing-steps {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .closing-step {
+            display: grid;
+            grid-template-columns: 32px 1fr;
+            gap: 1rem;
+            align-items: start;
+            padding: 1rem 1.25rem;
+            background: rgba(255,255,255,0.04);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .closing-step:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .closing-step-num {
+            width: 28px; height: 28px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.45);
+        }
+
+        .closing-step-text {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.68);
+            line-height: 1.55;
+            padding-top: 4px;
+        }
+
+        /* Completed closing step */
+        .closing-step.step-done {
+            background: rgba(52,199,89,0.08);
+            border-color: rgba(52,199,89,0.18);
+        }
+
+        .closing-step.step-done .closing-step-num {
+            background: rgba(52,199,89,0.2);
+            color: #34C759;
+        }
+
+        .closing-step.step-done .closing-step-text {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .closing-step.step-done .closing-step-text .step-check {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: #34C759;
+            margin-left: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* ========== CONTACT CARD ========== */
+        .contact-card {
+            margin-top: 3.5rem;
+            padding: 2.5rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-xl);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+        }
+
+        .contact-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-card-avatar {
+            width: 52px; height: 52px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            flex-shrink: 0;
+        }
+
+        .contact-card-avatar-text {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 0.02em;
+        }
+
+        .contact-card-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.02em;
+            margin-bottom: 2px;
+        }
+
+        .contact-card-role {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.4);
+            font-weight: 500;
+        }
+
+        .contact-links { display: grid; gap: 0.6rem; }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0.85rem 1.1rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.1);
+            transform: translateX(4px);
+        }
+
+        .contact-link-icon {
+            width: 32px; height: 32px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-link-icon i {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .contact-link-body {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .contact-link-label {
+            font-size: 0.63rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.35);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+        }
+
+        .contact-link-value {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.72);
+            letter-spacing: -0.01em;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--gray-900);
+            padding: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-brand-mark {
+            width: 20px; height: 20px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-brand-mark span {
+            width: 6px; height: 6px;
+            background: rgba(255,255,255,0.4);
+            border-radius: 50%;
+        }
+
+        .footer-brand-name {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: -0.01em;
+        }
+
+        .footer-note {
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.2);
+        }
+
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .footer-contact a {
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.3);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-contact a:hover { color: rgba(255,255,255,0.6); }
+        .footer-contact a i { font-size: 0.6rem; }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .nav-links, .nav-cta { display: none; }
+            .mobile-toggle { display: block; }
+            .scope-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 4rem 1.25rem; }
+            .hero { padding: 7rem 1.25rem 4rem; }
+            .hero-meta { flex-direction: column; gap: 1.5rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .intro-block { padding: 2.5rem 1.75rem; }
+            .q-group { padding: 1.75rem; }
+            .roadmap-phase { grid-template-columns: 40px 1fr; gap: 1rem; }
+            .roadmap-line { left: 19px; }
+            .roadmap-line-progress { left: 19px; }
+            .roadmap-card-header { padding: 1.5rem 1.5rem 0; }
+            .roadmap-card-body { padding: 1.25rem 1.5rem 1.5rem; }
+            .competitor-list { grid-template-columns: 1fr; }
+            .closing-section { padding: 7rem 1.25rem; }
+            .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 0.75rem; }
+            .footer-contact { flex-wrap: wrap; justify-content: center; }
+            .hero-meta { gap: 2rem; }
+        }
+
+        @media (max-width: 480px) {
+            body { font-size: 16px; }
+            .hero h1 { font-size: 2.3rem; }
+            .roadmap-phase { grid-template-columns: 32px 1fr; gap: 0.75rem; }
+            .roadmap-line { left: 15px; }
+            .roadmap-line-progress { left: 15px; }
+            .roadmap-dot { width: 14px; height: 14px; }
+            .roadmap-phase.ongoing .roadmap-dot { width: 18px; height: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-decoration">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+    </div>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="nav-logo-mark">
+                    <div class="nav-logo-mark-inner"></div>
+                </div>
+                <div class="nav-logo-text">
+                    <span class="nav-logo-name">Arian Jecoliah Alamba</span>
+                    <span class="nav-logo-title">Project Manager</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#questionnaire">Questionnaire</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#scope">Scope</a></li>
+                <li><a href="#next-steps">Next Steps</a></li>
+            </ul>
+            <a href="#questionnaire" class="nav-cta">Begin Here</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#questionnaire">Questionnaire</a></li>
+            <li><a href="#process">How We Work</a></li>
+            <li><a href="#scope">Scope of Work</a></li>
+            <li><a href="#next-steps">Next Steps</a></li>
+        </ul>
+        <div class="mobile-contact-block">
+            <p>Contact</p>
+            <a href="tel:08147648403">
+                <i class="fas fa-phone"></i>
+                08147648403
+            </a>
+            <a href="mailto:alambajecoliah@gmail.com">
+                <i class="fas fa-envelope"></i>
+                alambajecoliah@gmail.com
+            </a>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <div class="animate-in" style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+                <div class="author-card">
+                    <div class="author-avatar">
+                        <span class="author-avatar-initials">AJA</span>
+                    </div>
+                    <div class="author-info">
+                        <div class="author-name">Arian Jecoliah Alamba</div>
+                        <div class="author-role">Project Manager</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Status -->
+            <div class="animate-in animate-delay-1" style="display: flex; justify-content: center;">
+                <div class="hero-status-badge">
+                    <span class="pulse-dot"></span>
+                    Phase 1 Active — Discovery In Progress
+                </div>
+            </div>
+
+            <div class="hero-eyebrow animate-in animate-delay-1">
+                <span class="dot"></span>
+                Client Proposal · Brand & Communications
+            </div>
+
+            <h1 class="animate-in animate-delay-2">
+                A Brand That Speaks Clearly<br>
+                <span class="light">Attracts the Right People</span>
+            </h1>
+
+            <p class="hero-subtitle animate-in animate-delay-3">
+                This document is your activation. Phase One — Discovery & Research — is now underway. Everything begins with understanding your brand before building anything.
+            </p>
+
+            <div class="hero-buttons animate-in animate-delay-4">
+                <a href="#process" class="btn-dark">
+                    <i class="fas fa-arrow-down"></i>
+                    See the Project Roadmap
+                </a>
+                <a href="#questionnaire" class="btn-glass">
+                    <i class="fas fa-pencil"></i>
+                    Begin the Questionnaire
+                </a>
+            </div>
+
+            <div class="hero-meta animate-in animate-delay-5">
+                <div class="meta-item">
+                    <div class="meta-label">Current Phase</div>
+                    <div class="meta-value" style="color: #248A3D;">01 — Discovery</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Deliverables</div>
+                    <div class="meta-value">Brand · Web · Social</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Status</div>
+                    <div class="meta-value" style="color: #248A3D;">● Ongoing</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ============================================================
+         INTRODUCTION
+    ============================================================ -->
+    <section id="introduction" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="section-container">
+            <div class="glass-card-flat reveal">
+                <div class="intro-block">
+                    <span class="section-label" style="justify-content: center; display: flex; margin-bottom: 1rem;">
+                        <i class="fas fa-handshake"></i> Introduction
+                    </span>
+                    <h2 class="section-title" style="margin-bottom: 1.75rem;">
+                        Before We Build Anything,<br>I Need to Understand You
+                    </h2>
+                    <div class="intro-body">
+                        <p>Every brand is different. Before I develop a strategy, write a single line of copy, or make any recommendation, I take time to understand your business, your goals, and the people you are trying to reach.</p>
+                        <p>That is why every project begins with a discovery process — and this document is the activation of that process. The questions that follow will shape everything — the strategy, the website copy, and the social media direction.</p>
+                        <p>The more honest and detailed your answers, the stronger the outcome will be.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ============================================================
+         DISCOVERY QUESTIONNAIRE
+    ============================================================ -->
+    <section id="questionnaire">
+        <div class="section-container">
+
+            <div class="section-header-centered">
+                <span class="section-label"><i class="fas fa-clipboard-list"></i> Discovery Questionnaire</span>
+                <h2 class="section-title">Tell Me Everything</h2>
+                <p class="section-subtitle">Please answer as openly as possible. There are no wrong answers — only the ones that help me understand your business better.</p>
+                <div class="questionnaire-note">
+                    <i class="fas fa-lock"></i>
+                    Your answers are private and used only to shape this engagement.
+                </div>
+            </div>
+
+            <div class="q-groups">
+
+                <div class="glass-card q-group reveal">
+                    <div class="q-group-header">
+                        <div class="q-group-num">01</div>
+                        <div class="q-group-title">Your Company</div>
+                    </div>
+                    <ul class="q-list">
+                        <li class="q-item"><span class="q-num">1</span><span class="q-text">Tell me the story behind your company. How did it start?</span></li>
+                        <li class="q-item"><span class="q-num">2</span><span class="q-text">What problem does your company solve for clients?</span></li>
+                        <li class="q-item"><span class="q-num">3</span><span class="q-text">What services do you currently offer?</span></li>
+                        <li class="q-item"><span class="q-num">4</span><span class="q-text">Are there services you are planning to add in the future?</span></li>
+                    </ul>
+                </div>
+
+                <div class="glass-card q-group reveal">
+                    <div class="q-group-header">
+                        <div class="q-group-num">02</div>
+                        <div class="q-group-title">Vision & Direction</div>
+                    </div>
+                    <ul class="q-list">
+                        <li class="q-item"><span class="q-num">5</span><span class="q-text">Where do you see the company in the next three to five years?</span></li>
+                        <li class="q-item"><span class="q-num">6</span><span class="q-text">What kind of clients or projects do you most want to attract?</span></li>
+                        <li class="q-item"><span class="q-num">7</span><span class="q-text">What do you want this project to change or improve for the business?</span></li>
+                        <li class="q-item"><span class="q-num">8</span><span class="q-text">What makes your company different from others doing similar work?</span></li>
+                    </ul>
+                </div>
+
+                <div class="glass-card q-group reveal">
+                    <div class="q-group-header">
+                        <div class="q-group-num">03</div>
+                        <div class="q-group-title">Your Audience</div>
+                    </div>
+                    <ul class="q-list">
+                        <li class="q-item"><span class="q-num">9</span><span class="q-text">Who is your ideal client?</span></li>
+                        <li class="q-item"><span class="q-num">10</span><span class="q-text">Who currently hires you most often?</span></li>
+                        <li class="q-item"><span class="q-num">11</span><span class="q-text">Who would you like to attract more of?</span></li>
+                        <li class="q-item"><span class="q-num">12</span><span class="q-text">What industries do you primarily work with?</span></li>
+                    </ul>
+                </div>
+
+                <div class="glass-card q-group reveal">
+                    <div class="q-group-header">
+                        <div class="q-group-num">04</div>
+                        <div class="q-group-title">Brand Personality</div>
+                    </div>
+                    <ul class="q-list">
+                        <li class="q-item"><span class="q-num">13</span><span class="q-text">If your company had a personality, how would it speak and behave?</span></li>
+                        <li class="q-item"><span class="q-num">14</span><span class="q-text">Choose three words that best describe your brand.</span></li>
+                        <li class="q-item"><span class="q-num">15</span><span class="q-text">What should people feel when they interact with your company?</span></li>
+                        <li class="q-item"><span class="q-num">16</span><span class="q-text">Are there words, tones, or communication styles you want to avoid?</span></li>
+                    </ul>
+                </div>
+
+                <div class="glass-card q-group reveal">
+                    <div class="q-group-header">
+                        <div class="q-group-num">05</div>
+                        <div class="q-group-title">Reference & Inspiration</div>
+                    </div>
+                    <ul class="q-list">
+                        <li class="q-item"><span class="q-num">17</span><span class="q-text">Which companies or brands do you admire and why?</span></li>
+                        <li class="q-item"><span class="q-num">18</span><span class="q-text">Are there websites that inspire you visually or in terms of copy?</span></li>
+                        <li class="q-item"><span class="q-num">19</span><span class="q-text">Which social media pages do you think are doing it well?</span></li>
+                        <li class="q-item"><span class="q-num">20</span><span class="q-text">Which brands do you want to be clearly distinct from?</span></li>
+                    </ul>
+                </div>
+
+                <div class="glass-card q-group reveal">
+                    <div class="q-group-header">
+                        <div class="q-group-num">06</div>
+                        <div class="q-group-title">Social Media</div>
+                    </div>
+                    <ul class="q-list">
+                        <li class="q-item"><span class="q-num">21</span><span class="q-text">What are your current social media goals?</span></li>
+                        <li class="q-item"><span class="q-num">22</span><span class="q-text">Which platforms matter most to your business right now?</span></li>
+                        <li class="q-item"><span class="q-num">23</span><span class="q-text">What type of content has performed well for you in the past?</span></li>
+                        <li class="q-item"><span class="q-num">24</span><span class="q-text">What challenges are you currently facing on social media?</span></li>
+                    </ul>
+                </div>
+
+                <div class="glass-card q-group reveal">
+                    <div class="q-group-header">
+                        <div class="q-group-num">07</div>
+                        <div class="q-group-title">Website</div>
+                    </div>
+                    <ul class="q-list">
+                        <li class="q-item"><span class="q-num">25</span><span class="q-text">What do you want visitors to do when they land on your website?</span></li>
+                        <li class="q-item"><span class="q-num">26</span><span class="q-text">What pages do you need copy written for?</span></li>
+                        <li class="q-item"><span class="q-num">27</span><span class="q-text">Do you have existing brand assets, copy, or a portfolio that should be referenced?</span></li>
+                    </ul>
+                </div>
+
+                <div class="glass-card q-group reveal">
+                    <div class="q-group-header">
+                        <div class="q-group-num">08</div>
+                        <div class="q-group-title">Final Thoughts</div>
+                    </div>
+                    <ul class="q-list">
+                        <li class="q-item"><span class="q-num">28</span><span class="q-text">Is there anything about your company that is important for me to understand before I begin?</span></li>
+                        <li class="q-item"><span class="q-num">29</span><span class="q-text">What would a truly successful outcome from this project look like for you?</span></li>
+                    </ul>
+                    <div class="q-submit-block">
+                        <p>When you're ready, submit your answers using the form below. The more detail you share, the stronger your strategy will be.</p>
+                        <a href="mailto:alambajecoliah@gmail.com?subject=Discovery Questionnaire — Brand %26 Communications" class="btn-dark">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Your Answers
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ============================================================
+         PROCESS — ROADMAP
+    ============================================================ -->
+    <section id="process">
+        <div class="section-container">
+
+            <div class="section-header-centered">
+                <span class="section-label"><i class="fas fa-route"></i> Project Roadmap</span>
+                <h2 class="section-title">A Clear Process,<br>Start to Finish</h2>
+                <p class="section-subtitle">Every project follows the same five-phase structure. Phase One is currently active — this document is the starting point of your discovery.</p>
+            </div>
+
+            <div class="roadmap-wrapper reveal">
+                <div class="roadmap-line"></div>
+                <div class="roadmap-line-progress" id="roadmapProgress"></div>
+
+                <!-- Phase 1 — ONGOING -->
+                <div class="roadmap-phase ongoing">
+                    <div class="roadmap-node">
+                        <div class="roadmap-dot"></div>
+                    </div>
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-header">
+                            <div class="roadmap-card-header-left">
+                                <span class="roadmap-phase-num">Phase 01</span>
+                                <h3 class="roadmap-phase-title">Discovery & Research</h3>
+                                <p class="roadmap-phase-subtitle">Understanding your brand before building anything.</p>
+                            </div>
+                            <div class="roadmap-status ongoing">
+                                <span class="status-dot"></span>
+                                Ongoing
+                            </div>
+                        </div>
+                        <div class="roadmap-card-body">
+                            <ul class="roadmap-deliverables">
+                                <li><i class="fas fa-circle"></i>Brand discovery session</li>
+                                <li><i class="fas fa-circle"></i>Review of existing communication materials</li>
+                                <li><i class="fas fa-circle"></i>Audience analysis</li>
+                                <li><i class="fas fa-circle"></i>Competitor landscape review</li>
+                            </ul>
+                            <div class="roadmap-outcome">
+                                <i class="fas fa-arrow-right"></i>
+                                <span><strong>Outcome:</strong> A clear picture of where your brand currently stands and where it needs to go. This website and questionnaire are part of this phase.</span>
+                            </div>
+
+                            <!-- Competitor Analysis -->
+                            <div class="competitor-section">
+                                <div class="competitor-section-header">
+                                    <i class="fas fa-binoculars"></i>
+                                    <h4>Competitor & Model Company Analysis</h4>
+                                </div>
+                                <p class="competitor-section-desc">As part of discovery, we study competitors and model companies in the media production and gear rental space — both locally in Nigeria and internationally — to understand positioning, messaging, and opportunities.</p>
+
+                                <!-- Nigerian / Local -->
+                                <div class="competitor-group">
+                                    <div class="competitor-group-label local">
+                                        <i class="fas fa-map-pin"></i>
+                                        Nigeria — Local Market
+                                    </div>
+                                    <div class="competitor-list">
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-video"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">Anthill Studios</span>
+                                                <span class="competitor-item-focus">Production · Animation · Post</span>
+                                            </div>
+                                        </div>
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-film"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">Inkblot Productions</span>
+                                                <span class="competitor-item-focus">Film · Content Production</span>
+                                            </div>
+                                        </div>
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-camera"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">Koga Studios</span>
+                                                <span class="competitor-item-focus">Media Production · Rentals</span>
+                                            </div>
+                                        </div>
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-clapperboard"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">Cinematics Nigeria</span>
+                                                <span class="competitor-item-focus">Gear Rental · Production Support</span>
+                                            </div>
+                                        </div>
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-lightbulb"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">Temple Management</span>
+                                                <span class="competitor-item-focus">Creative Agency · Content</span>
+                                            </div>
+                                        </div>
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-microphone"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">FilmHouse Group</span>
+                                                <span class="competitor-item-focus">Cinema · Production · Distribution</span>
+                                            </div>
+                                        </div>
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-sliders"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">Rental24 Nigeria</span>
+                                                <span class="competitor-item-focus">Camera & Grip Equipment Rental</span>
+                                            </div>
+                                        </div>
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-play-circle"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">X3M Media</span>
+                                                <span class="competitor-item-focus">Media · Content · Production</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- International -->
+                                <div class="competitor-group">
+                                    <div class="competitor-group-label international">
+                                        <i class="fas fa-globe"></i>
+                                        International — Global Market
+                                    </div>
+                                    <div class="competitor-list">
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-video"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">RED Digital Cinema</span>
+                                                <span class="competitor-item-focus">Camera Manufacturer · Rental Partners</span>
+                                            </div>
+                                        </div>
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-camera"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">ARRI Rental</span>
+                                                <span class="competitor-item-focus">Premium Gear Rental · Global</span>
+                                            </div>
+                                        </div>
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-clapperboard"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">Panavision</span>
+                                                <span class="competitor-item-focus">Camera Systems · Rental · Support</span>
+                                            </div>
+                                        </div>
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-film"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">BorrowLenses</span>
+                                                <span class="competitor-item-focus">Online Gear Rental (US)</span>
+                                            </div>
+                                        </div>
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-sliders"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">LensRentals</span>
+                                                <span class="competitor-item-focus">Lens & Camera Rental (US)</span>
+                                            </div>
+                                        </div>
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-lightbulb"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">Media Monks</span>
+                                                <span class="competitor-item-focus">Content · Production · Digital</span>
+                                            </div>
+                                        </div>
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-play-circle"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">Framestore</span>
+                                                <span class="competitor-item-focus">VFX · Creative Studio · Production</span>
+                                            </div>
+                                        </div>
+                                        <div class="competitor-item">
+                                            <div class="competitor-item-icon"><i class="fas fa-microphone"></i></div>
+                                            <div class="competitor-item-info">
+                                                <span class="competitor-item-name">The Mill</span>
+                                                <span class="competitor-item-focus">Creative Production · VFX · Content</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2 — UPCOMING -->
+                <div class="roadmap-phase upcoming">
+                    <div class="roadmap-node">
+                        <div class="roadmap-dot"></div>
+                    </div>
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-header">
+                            <div class="roadmap-card-header-left">
+                                <span class="roadmap-phase-num">Phase 02</span>
+                                <h3 class="roadmap-phase-title">Brand Communication Foundation</h3>
+                                <p class="roadmap-phase-subtitle">Establishing the strategic core of the brand.</p>
+                            </div>
+                            <div class="roadmap-status upcoming">Upcoming</div>
+                        </div>
+                        <div class="roadmap-card-body">
+                            <ul class="roadmap-deliverables">
+                                <li><i class="fas fa-circle"></i>Brand positioning</li>
+                                <li><i class="fas fa-circle"></i>Core messaging framework</li>
+                                <li><i class="fas fa-circle"></i>Brand personality and voice</li>
+                                <li><i class="fas fa-circle"></i>Communication principles</li>
+                                <li><i class="fas fa-circle"></i>Audience-specific messaging</li>
+                            </ul>
+                            <div class="roadmap-outcome">
+                                <i class="fas fa-arrow-right"></i>
+                                <span><strong>Outcome:</strong> A Brand Communication Guide — the document that governs how your brand speaks across every platform.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 — UPCOMING -->
+                <div class="roadmap-phase upcoming">
+                    <div class="roadmap-node">
+                        <div class="roadmap-dot"></div>
+                    </div>
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-header">
+                            <div class="roadmap-card-header-left">
+                                <span class="roadmap-phase-num">Phase 03</span>
+                                <h3 class="roadmap-phase-title">Website Copy</h3>
+                                <p class="roadmap-phase-subtitle">Strategic, conversion-focused writing for every page.</p>
+                            </div>
+                            <div class="roadmap-status upcoming">Upcoming</div>
+                        </div>
+                        <div class="roadmap-card-body">
+                            <ul class="roadmap-deliverables">
+                                <li><i class="fas fa-circle"></i>Homepage</li>
+                                <li><i class="fas fa-circle"></i>About Us</li>
+                                <li><i class="fas fa-circle"></i>Services</li>
+                                <li><i class="fas fa-circle"></i>Portfolio</li>
+                                <li><i class="fas fa-circle"></i>Contact</li>
+                                <li><i class="fas fa-circle"></i>Calls-to-action throughout</li>
+                            </ul>
+                            <div class="roadmap-outcome">
+                                <i class="fas fa-arrow-right"></i>
+                                <span><strong>Outcome:</strong> Complete website copy written to communicate your value clearly, build trust, and encourage enquiries.</span>
+                            </div>
+
+                            <!-- FAQs about Web Copies -->
+                            <div class="faq-section">
+                                <div class="faq-section-header">
+                                    <i class="fas fa-circle-question"></i>
+                                    <h4>Frequently Asked Questions — Website Copy</h4>
+                                </div>
+                                <div class="faq-list" id="faqList">
+                                    <div class="faq-item">
+                                        <div class="faq-question" onclick="toggleFaq(this)">
+                                            <span class="faq-q-text">What exactly is "website copy" and how is it different from content?</span>
+                                            <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <div class="faq-answer-inner">Website copy refers to the strategic text on each page of your website — headlines, descriptions, calls-to-action, and value propositions. It's different from blog content or articles because its primary job is to guide a visitor toward a specific action, like making an enquiry or understanding your services.</div>
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <div class="faq-question" onclick="toggleFaq(this)">
+                                            <span class="faq-q-text">How many rounds of revision are included?</span>
+                                            <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <div class="faq-answer-inner">Each page of website copy includes two rounds of revision. The first draft is written from the brand strategy, then you provide feedback, and I refine. This process ensures the copy feels accurate and natural to your brand while remaining strategically effective.</div>
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <div class="faq-question" onclick="toggleFaq(this)">
+                                            <span class="faq-q-text">Do I need to have a website designer before the copy is written?</span>
+                                            <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <div class="faq-answer-inner">No. In fact, it's best to have the copy written first. Good website design should be built around the messaging, not the other way round. The copy will come with clear structure and layout direction so your designer knows exactly what goes where.</div>
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <div class="faq-question" onclick="toggleFaq(this)">
+                                            <span class="faq-q-text">Will the copy be SEO-friendly?</span>
+                                            <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <div class="faq-answer-inner">Yes. The copy will be written with search engine best practices in mind — clear headings, relevant language, and natural keyword usage. However, deep technical SEO (schema markup, site speed, etc.) falls outside this scope unless separately agreed.</div>
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <div class="faq-question" onclick="toggleFaq(this)">
+                                            <span class="faq-q-text">What format will the website copy be delivered in?</span>
+                                            <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <div class="faq-answer-inner">You'll receive a structured document (Google Docs or PDF) with copy organized by page and section, including headlines, body copy, CTAs, and layout notes. This makes it easy for you or your designer to implement directly.</div>
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <div class="faq-question" onclick="toggleFaq(this)">
+                                            <span class="faq-q-text">Can I add more pages later?</span>
+                                            <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <div class="faq-answer-inner">Absolutely. Additional pages (FAQ pages, landing pages, career pages, etc.) can be added at any time for a per-page rate. Since the brand voice and strategy are already established, additional pages are faster to produce.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4 — UPCOMING -->
+                <div class="roadmap-phase upcoming">
+                    <div class="roadmap-node">
+                        <div class="roadmap-dot"></div>
+                    </div>
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-header">
+                            <div class="roadmap-card-header-left">
+                                <span class="roadmap-phase-num">Phase 04</span>
+                                <h3 class="roadmap-phase-title">Social Media Strategy</h3>
+                                <p class="roadmap-phase-subtitle">A practical framework for showing up online with intention.</p>
+                            </div>
+                            <div class="roadmap-status upcoming">Upcoming</div>
+                        </div>
+                        <div class="roadmap-card-body">
+                            <ul class="roadmap-deliverables">
+                                <li><i class="fas fa-circle"></i>Content pillars and themes</li>
+                                <li><i class="fas fa-circle"></i>Brand voice for social media</li>
+                                <li><i class="fas fa-circle"></i>Engagement approach</li>
+                                <li><i class="fas fa-circle"></i>Content calendar recommendations</li>
+                            </ul>
+                            <div class="roadmap-outcome">
+                                <i class="fas fa-arrow-right"></i>
+                                <span><strong>Outcome:</strong> A Social Media Strategy Document your team can use immediately.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 5 — UPCOMING -->
+                <div class="roadmap-phase upcoming">
+                    <div class="roadmap-node">
+                        <div class="roadmap-dot"></div>
+                    </div>
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-header">
+                            <div class="roadmap-card-header-left">
+                                <span class="roadmap-phase-num">Phase 05</span>
+                                <h3 class="roadmap-phase-title">Ongoing Support</h3>
+                                <p class="roadmap-phase-subtitle">For clients who want continued communication support.</p>
+                            </div>
+                            <div class="roadmap-status upcoming">Upcoming</div>
+                        </div>
+                        <div class="roadmap-card-body">
+                            <ul class="roadmap-deliverables">
+                                <li><i class="fas fa-circle"></i>Monthly content planning</li>
+                                <li><i class="fas fa-circle"></i>Caption writing</li>
+                                <li><i class="fas fa-circle"></i>Platform management</li>
+                                <li><i class="fas fa-circle"></i>Community engagement</li>
+                                <li><i class="fas fa-circle"></i>Performance reviews</li>
+                            </ul>
+                            <div class="roadmap-outcome">
+                                <i class="fas fa-arrow-right"></i>
+                                <span><strong>Outcome:</strong> Consistent communication support on agreed terms, month after month.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ============================================================
+         SCOPE OF WORK
+    ============================================================ -->
+    <section id="scope">
+        <div class="section-container">
+
+            <div class="section-header-centered">
+                <span class="section-label"><i class="fas fa-list-check"></i> Scope of Work</span>
+                <h2 class="section-title">What's Included</h2>
+                <p class="section-subtitle">The following outlines exactly what is included in this engagement. No surprises.</p>
+            </div>
+
+            <div class="scope-grid">
+
+                <div class="glass-card scope-card reveal">
+                    <div class="scope-card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Brand Communication</h3>
+                    <ul class="scope-list">
+                        <li><i class="fas fa-circle"></i>Brand discovery session</li>
+                        <li><i class="fas fa-circle"></i>Audience analysis</li>
+                        <li><i class="fas fa-circle"></i>Brand positioning</li>
+                        <li><i class="fas fa-circle"></i>Core messaging framework</li>
+                        <li><i class="fas fa-circle"></i>Voice and tone guide</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card scope-card reveal reveal-delay-1">
+                    <div class="scope-card-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Website Copy</h3>
+                    <ul class="scope-list">
+                        <li><i class="fas fa-circle"></i>Homepage</li>
+                        <li><i class="fas fa-circle"></i>About page</li>
+                        <li><i class="fas fa-circle"></i>Services page</li>
+                        <li><i class="fas fa-circle"></i>Portfolio page</li>
+                        <li><i class="fas fa-circle"></i>Contact page</li>
+                        <li><i class="fas fa-circle"></i>Calls-to-action throughout</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card scope-card reveal reveal-delay-2">
+                    <div class="scope-card-icon"><i class="fas fa-share-nodes"></i></div>
+                    <h3>Social Media Strategy</h3>
+                    <ul class="scope-list">
+                        <li><i class="fas fa-circle"></i>Content pillars</li>
+                        <li><i class="fas fa-circle"></i>Content strategy document</li>
+                        <li><i class="fas fa-circle"></i>Brand voice for social</li>
+                        <li><i class="fas fa-circle"></i>Engagement recommendations</li>
+                        <li><i class="fas fa-circle"></i>Content calendar framework</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card scope-card reveal reveal-delay-3">
+                    <div class="scope-card-icon"><i class="fas fa-rotate"></i></div>
+                    <h3>Ongoing Management</h3>
+                    <span class="scope-optional-badge">Optional · Separate Agreement</span>
+                    <ul class="scope-list">
+                        <li><i class="fas fa-circle"></i>Monthly content planning</li>
+                        <li><i class="fas fa-circle"></i>Caption writing</li>
+                        <li><i class="fas fa-circle"></i>Social media management</li>
+                        <li><i class="fas fa-circle"></i>Community management</li>
+                        <li><i class="fas fa-circle"></i>Performance reporting</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="scope-exclusions reveal">
+                <h4>What is Not Included</h4>
+                <p style="font-size: 0.85rem; color: var(--gray-500); margin-bottom: 1.1rem; line-height: 1.65;">Unless separately agreed and priced, the following fall outside the scope of this project:</p>
+                <ul class="exclusion-list">
+                    <li><i class="fas fa-circle"></i>Website design or development</li>
+                    <li><i class="fas fa-circle"></i>Graphic design or visual identity</li>
+                    <li><i class="fas fa-circle"></i>Photography or videography</li>
+                    <li><i class="fas fa-circle"></i>Technical web implementation</li>
+                    <li><i class="fas fa-circle"></i>Paid advertising or media buying</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ============================================================
+         CLOSING & NEXT STEPS
+    ============================================================ -->
+    <section class="closing-section" id="next-steps">
+        <div class="closing-inner">
+
+            <div class="closing-eyebrow animate-in">
+                <span class="closing-eyebrow-dot"></span>
+                Next Steps
+            </div>
+
+            <h2 class="closing-title reveal">
+                Ready to Build Something<br>Worth Remembering?
+            </h2>
+
+            <p class="closing-body reveal">
+                Phase One is already active. This document is the beginning. Here's what has happened and what's next.
+            </p>
+
+            <ol class="closing-steps reveal">
+                <li class="closing-step step-done">
+                    <div class="closing-step-num">✓</div>
+                    <div class="closing-step-text">
+                        Discovery document delivered and project activated
+                        <span class="step-check"><i class="fas fa-check"></i> Done</span>
+                    </div>
+                </li>
+                <li class="closing-step">
+                    <div class="closing-step-num">2</div>
+                    <div class="closing-step-text">Complete and return the discovery questionnaire above</div>
+                </li>
+                <li class="closing-step">
+                    <div class="closing-step-num">3</div>
+                    <div class="closing-step-text">Confirm the scope and sign the project agreement</div>
+                </li>
+                <li class="closing-step">
+                    <div class="closing-step-num">4</div>
+                    <div class="closing-step-text">Submit the deposit to begin Phase 02</div>
+                </li>
+                <li class="closing-step">
+                    <div class="closing-step-num">5</div>
+                    <div class="closing-step-text">We schedule the discovery session and continue the project</div>
+                </li>
+            </ol>
+
+            <div class="reveal">
+                <a href="#questionnaire" class="btn-glass" style="background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.82);">
+                    <i class="fas fa-pencil"></i>
+                    Get Started — Complete the Questionnaire
+                </a>
+            </div>
+
+            <div class="contact-card reveal">
+                <div class="contact-card-header">
+                    <div class="contact-card-avatar">
+                        <span class="contact-card-avatar-text">AJA</span>
+                    </div>
+                    <div>
+                        <div class="contact-card-name">Arian Jecoliah Alamba</div>
+                        <div class="contact-card-role">Project Manager</div>
+                    </div>
+                </div>
+                <div class="contact-links">
+                    <a href="tel:08147648403" class="contact-link">
+                        <div class="contact-link-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-link-body">
+                            <span class="contact-link-label">Call or WhatsApp</span>
+                            <span class="contact-link-value">08147648403</span>
+                        </div>
+                    </a>
+                    <a href="mailto:alambajecoliah@gmail.com" class="contact-link">
+                        <div class="contact-link-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-link-body">
+                            <span class="contact-link-label">Email</span>
+                            <span class="contact-link-value">alambajecoliah@gmail.com</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-brand-mark"><span></span></div>
+                <span class="footer-brand-name">Arian Jecoliah Alamba</span>
+            </div>
+            <div class="footer-contact">
+                <a href="tel:08147648403"><i class="fas fa-phone"></i> 08147648403</a>
+                <a href="mailto:alambajecoliah@gmail.com"><i class="fas fa-envelope"></i> alambajecoliah@gmail.com</a>
+            </div>
+            <p class="footer-note">Prepared for [Company Name] · Confidential</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Progress
+        const scrollProgress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            scrollProgress.style.width = progress + '%';
+        });
+
+        // Navbar
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.pageYOffset > 40);
+        });
+
+        // Mobile Menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('active');
+            mobileToggle.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+        });
+
+        document.querySelectorAll('.mobile-nav-links a, .mobile-contact-block a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileToggle.querySelector('i').className = 'fas fa-bars';
+            });
+        });
+
+        // Reveal on Scroll
+        const revealEls = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.07, rootMargin: '0px 0px -50px 0px' });
+
+        revealEls.forEach(el => revealObserver.observe(el));
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    const offset = 64;
+                    const pos = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: pos, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Roadmap progress line
+        function updateRoadmapProgress() {
+            const wrapper = document.querySelector('.roadmap-wrapper');
+            const progressLine = document.getElementById('roadmapProgress');
+            const ongoingPhase = document.querySelector('.roadmap-phase.ongoing');
+
+            if (!wrapper || !progressLine || !ongoingPhase) return;
+
+            const wrapperRect = wrapper.getBoundingClientRect();
+            const ongoingRect = ongoingPhase.getBoundingClientRect();
+            const dot = ongoingPhase.querySelector('.roadmap-dot');
+            const dotRect = dot.getBoundingClientRect();
+
+            const progressHeight = dotRect.top - wrapperRect.top + dotRect.height / 2;
+            progressLine.style.height = Math.max(0, progressHeight) + 'px';
+        }
+
+        window.addEventListener('load', updateRoadmapProgress);
+        window.addEventListener('resize', updateRoadmapProgress);
+        window.addEventListener('scroll', updateRoadmapProgress);
+
+        // FAQ Toggle
+        function toggleFaq(el) {
+            const item = el.closest('.faq-item');
+            const allItems = document.querySelectorAll('.faq-item');
+
+            allItems.forEach(faq => {
+                if (faq !== item) faq.classList.remove('open');
+            });
+
+            item.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
+```
